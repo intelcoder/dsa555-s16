@@ -1,4 +1,5 @@
 #include <iostream>
+#include "a1q1.h"
 using namespace std;
 void printList(DList<int>& list);
 
@@ -13,7 +14,7 @@ int main(void){
 	list.insertBack(5);   //3 2 1 5
 	printList(list);
 
-	DList<int> list2=list1;
+	DList<int> list2=list;
 	printList(list2);	
 }
 void printList(DList<int>& list){
@@ -22,7 +23,7 @@ void printList(DList<int>& list){
 		cout << "empty list" << endl;
 	}
 	else{
-		for(it=list.begin();it!=list.end();list++){
+		for(it=list.begin();it!=list.end();it++){
 			cout << * it << endl;
 		}
 	}
