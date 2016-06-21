@@ -75,7 +75,7 @@ public:
 	//O(1)
 	iterator insertBack(const T& data){
 		Node* nn=new Node(data,nullptr);
-		if(last==nullptr){
+		if(last_==nullptr){
 			//empty list
 			first_=nn;
 		}
@@ -96,7 +96,7 @@ public:
 		if(it.myList_ == this && it!=end()){
 			Node* curr=it.curr_;
 			Node* nn=new Node(data,curr->next_);
-			curr_->next_=nn;
+			curr->next_=nn;
 			if(curr==last_){
 				last_=nn;
 			}
@@ -115,8 +115,9 @@ public:
 				last_=nullptr;
 
 			}
+			delete tmp;
 		}
-		delete tmp;
+
 	}
 	//O(n)
 	void remove(iterator& it){
@@ -161,7 +162,7 @@ public:
 				while(curr->next_!=rm){
 					curr=curr->next_;
 				}
-				curr_->next_=nullptr;
+				curr->next_=nullptr;
 				last_=curr;
 				delete rm;
 			}
